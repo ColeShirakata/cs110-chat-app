@@ -1,0 +1,8 @@
+.up-vote, .down-vote {
+    height: 15px;
+}
+
+.up-button, .down-button {
+    background: none;
+    border: none;
+}

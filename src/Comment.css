@@ -1,10 +1,16 @@
 .comment-container {
     display: flex;
-    flex-direction: column;
+    
     width: 50vh;
     height: 10vh;
     margin-top: 70px;
     margin-left: 20px;
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
 }
 
 .name {
@@ -50,4 +56,13 @@
 
 .reply-icon:hover {
     color: black;
+}
+
+.vote-count {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reply-box {
+    display: flex;
 }
