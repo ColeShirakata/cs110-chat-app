@@ -6,17 +6,32 @@ import Reply from './Reply';
 function Comment({name, comment}) {
 
     const [replyClicked, setReplyClicked] = useState(false);
-    const [reply, setReply] = useState('');
     const [replies, setReplies] = useState([]);
+    const [replyName, setReplyName] = useState('');
+    const [replyPost, setReplyPost] = useState('');
 
     const handleReplyClick = () => {
         setReplyClicked(true);
+    };
+
+    const handleName = (event) => {
+        setReplyName(event.target.value);
     }
 
-    const handleComment = (comment) => {
-        setReplyClicked(false);
-        setReply(comment);
+    const handlePost = (event) => {
+        setReplyPost(event.target.value);
     }
+
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (replyName && replyPost) {
+            setReplies([...replies, { replyName, replyPost }]);
+            setReplyClicked(false);
+        }
+    }
+
+
 
     return (
         <div>
@@ -29,16 +44,23 @@ function Comment({name, comment}) {
                         <button className="reply" onClick={handleReplyClick}>Reply</button>
                     </div>
                     {replyClicked ? (
-                        <div className="reply-box">
-                            <Reply onSubmit={handleComment}/>
-                        </div>
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                <input type="text" placeholder="Name..." className="name-box" value={replyName} onChange={handleName}/>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Write a new post" className="post-box" value={replyPost} onChange={handlePost}/>
+                            </div>
+                            <div>
+                                <button type="submit" className="submit-button">Submit</button>
+                            </div>
+                      </form>
                     ) : null}
-                    {reply && <div className="reply">{reply}</div>}
-                    {replies.map((reply, index) => (
-                        <div key={index}>
-                            <Comment name={reply.name} comment={reply.post} />
-                        </div>
-                    ))}
+                    <div className="comment-space">
+                        {replies.map((comment, index) => (
+                        <Reply key={index} name={comment.replyName} comment={comment.replyPost} />
+                        ))}
+                    </div>
                 </div>
                 <div className="vote-count">
                     <Vote />
