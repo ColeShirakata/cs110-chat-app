@@ -1,0 +1,15 @@
+.comment-container {
+    width: 50vh;
+    height: 10vh;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.name {
+    text-align: left;
+    color: blue;
+}
+
+.comment {
+    text-align: left;
+}
