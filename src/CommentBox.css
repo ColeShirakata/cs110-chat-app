@@ -1,3 +1,8 @@
+h1 {
+    text-align: left;
+    margin-left: 31px;
+}
+
 .comment-box {
     text-align: center;
     width: 50vh;
@@ -6,25 +11,26 @@
     padding: 10px;
     margin: auto;
     margin-top: 50px;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 10px 10px rgba(63, 63, 63, 0.2);
     border-radius: 10px;
 }
 
 .name-box {
     width: 45vh;
+    height: 25px;
     margin: 5px;
     border-radius: 3px;
-    border-color: lightgray;
-    border-width: 1px;
+    border: 2px solid #eae8e8;
+    border-width: 2px;
 }
 
 .post-box {
     width: 45vh;
     margin: 5px;
-    height: 5vh;
+    height: 60px;
     border-radius: 3px;
-    border-color: lightgray;
-    border-width: 1px;
+    border: 2px solid #eae8e8;
+    text-align: top;
 }
 
 .submit-button {

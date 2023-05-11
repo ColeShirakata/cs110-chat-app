@@ -1,15 +1,53 @@
 .comment-container {
+    display: flex;
+    flex-direction: column;
     width: 50vh;
     height: 10vh;
-    margin-top: 50px;
+    margin-top: 70px;
     margin-left: 20px;
 }
 
 .name {
+    display: flex;
+    justify-content: flex-start;
     text-align: left;
     color: blue;
+    float: left;
+    margin: 10px;
 }
 
 .comment {
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
     text-align: left;
+    padding-top: 1px;
+    float: left;
+}
+
+.reply-button {
+    display: flex;
+    margin: 10px;
+}
+
+.reply-button:hover {
+    color: black;
+}  
+
+.reply {
+    margin-left: 8px;
+    background: none;
+    border: none;
+    float: left;
+    color: gray;
+}
+
+.reply-icon {
+    height: 15px;
+    float: left;
+    color: gray;
+}
+
+.reply-icon:hover {
+    color: black;
 }
